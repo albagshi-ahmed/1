@@ -3,6 +3,44 @@
    Brand tokens + layout for the single-page site.
    ========================================================================= */
 
+/* =========================================================================
+   Brand fonts — self-hosted from /brand/fonts/
+   Drop the TTFs described in brand/fonts/README.md into that folder to
+   activate. The stack falls back cleanly to Inter / Georgia if missing.
+   ========================================================================= */
+
+/* Primary Latin — Season Sans TRIAL */
+@font-face {
+  font-family: 'Season Sans TRIAL';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('brand/fonts/SeasonSans-TRIAL-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Season Sans TRIAL';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('brand/fonts/SeasonSans-TRIAL-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Season Sans TRIAL';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('brand/fonts/SeasonSans-TRIAL-SemiBold.ttf') format('truetype');
+}
+
+/* Italic accent — Cormorant SemiBoldItalic (accent words only) */
+@font-face {
+  font-family: 'Cormorant';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('brand/fonts/Cormorant-SemiBoldItalic.ttf') format('truetype');
+}
+
 :root {
   /* Color tokens */
   --cream:    #F2F0E9;
@@ -18,9 +56,9 @@
   --lavender: #BCAEE6;
   --green:    #5BBF74;
 
-  /* Type */
-  --font-sans:  'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  --font-serif: 'Instrument Serif', 'Source Serif 4', Georgia, serif;
+  /* Type — rvnu brand stack (see @font-face above, brand/fonts/README.md) */
+  --font-sans:  'Season Sans TRIAL', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-serif: 'Cormorant', 'Instrument Serif', 'Source Serif 4', Georgia, serif;
 
   /* Layout */
   --wrap-max: 1240px;
@@ -57,7 +95,7 @@ button { font: inherit; cursor: pointer; border: 0; background: transparent; col
 a { color: inherit; text-decoration: none; }
 ul { margin: 0; padding: 0; list-style: none; }
 p  { margin: 0; }
-h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -0.015em; }
+h1, h2, h3, h4 { margin: 0; font-weight: 600; letter-spacing: -0.015em; }
 
 .wrap { width: 100%; max-width: var(--wrap-max); margin-inline: auto; padding-inline: var(--gutter); }
 
@@ -68,11 +106,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -0.015em; }
 }
 .skip-link:focus { top: 12px; }
 
-/* Italic-serif accent — the brand's signature */
+/* Italic-serif accent — the brand's signature (Cormorant SemiBoldItalic) */
 .serif-italic {
   font-family: var(--font-serif);
   font-style: italic;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: -0.005em;
 }
 
@@ -238,7 +276,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -0.015em; }
 .tile-lavender { background: var(--lavender); }
 .tile-stat {
   font-family: var(--font-sans);
-  font-weight: 800; font-size: 22px;
+  font-weight: 600; font-size: 22px;
   color: var(--cream);
 }
 
@@ -254,7 +292,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -0.015em; }
   font-size: clamp(44px, 8vw, 104px);
   line-height: 0.98;
   letter-spacing: -0.025em;
-  font-weight: 700;
+  font-weight: 600;
 }
 .hero-title .serif-italic {
   font-size: 1.02em;
@@ -359,7 +397,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -0.015em; }
 }
 .solution-card h3 {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.01em;
 }
 .solution-card p {
@@ -403,7 +441,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -0.015em; }
 }
 .stat-num {
   font-size: clamp(28px, 4vw, 44px);
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1;
 }
@@ -445,7 +483,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -0.015em; }
   font-size: clamp(48px, 9vw, 120px);
   line-height: 0.98;
   letter-spacing: -0.025em;
-  font-weight: 700;
+  font-weight: 600;
 }
 .cta-title .serif-italic { font-size: 1.02em; }
 .cta-sub {

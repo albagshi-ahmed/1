@@ -13,7 +13,9 @@ Pure static — no build step.
 - `styles.css` — brand tokens, layout, components
 - `script.js` — sticky-header scroll state, mobile nav, year stamp
 - `assets/` — logo SVGs (wordmark + submark + favicon)
-- Type via Google Fonts: **Inter** (sans) + **Instrument Serif** (italic accent)
+- `brand/fonts/` — self-hosted brand fonts (see `brand/fonts/README.md`)
+- Type: **Season Sans TRIAL** (sans) + **Cormorant SemiBoldItalic** (italic
+  accent) — self-hosted, with Inter / Georgia fallbacks.
 
 ## Run locally
 
@@ -48,9 +50,25 @@ Static — drop the folder on any host:
 
 Typography:
 
-- `--font-sans`  → `Inter`
-- `--font-serif` → `Instrument Serif` (italic only — used as the brand's signature
-  accent on words like *Growth*, *Grow*, *Sales*, *expertise*)
+- `--font-sans`  → `Season Sans TRIAL` (Regular 400 · Medium 500 · SemiBold 600)
+- `--font-serif` → `Cormorant` SemiBoldItalic (italic only — used as the brand's
+  signature accent on words like *Growth*, *Grow*, *Sales*, *expertise*)
+
+Font files are self-hosted from `brand/fonts/`. If that folder is empty the
+site falls back to Inter / Georgia via the CSS stack. See
+[`brand/fonts/README.md`](brand/fonts/README.md) for the list of required TTFs.
+
+Hierarchy in use (matches the PDF/deck system):
+
+| Slot                          | Face  | Weight |
+|-------------------------------|-------|--------|
+| Hero / section headline       | SS    | 600    |
+| Accent words (*Growth* …)     | Cormorant | 600 italic |
+| Card titles                   | SS    | 500    |
+| Hero KPI number               | SS    | 600    |
+| Uppercase label / eyebrow     | SS    | 600    |
+| Body / observations           | SS    | 400    |
+| Chrome / metadata / copyright | SS    | 400    |
 
 ## Editing copy
 
