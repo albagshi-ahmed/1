@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 130" role="img" aria-label="rvnu">
+  <title>rvnu</title>
+  <g fill="currentColor">
+    <!-- r: stem + arm with rounded top-right shoulder -->
+    <path d="M0,30 L46,30 A24,24 0 0 1 70,54 L70,82 L46,82 L46,54 L24,54 L24,118 L0,118 Z"/>
+    <!-- v: sharp angular V -->
+    <path d="M96,30 L124,30 L142,90 L160,30 L188,30 L156,118 L128,118 Z"/>
+    <!-- n: left stem + arch + right stem, rounded top corners -->
+    <path d="M208,118 L208,54 A24,24 0 0 1 232,30 L252,30 A24,24 0 0 1 276,54 L276,118 L252,118 L252,54 L232,54 L232,118 Z"/>
+    <!-- u: mirror of n -->
+    <path d="M296,30 L296,94 A24,24 0 0 0 320,118 L340,118 A24,24 0 0 0 364,94 L364,30 L340,30 L340,94 L320,94 L320,30 Z"/>
+    <!-- . square dot -->
+    <rect x="386" y="94" width="24" height="24"/>
+  </g>
+</svg>
