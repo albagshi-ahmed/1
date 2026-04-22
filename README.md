@@ -12,13 +12,19 @@ from lucky strikes into disciplined, compounding knowledge.
 
 Pure static — no build step.
 
-- `index.html` — page markup and copy
-- `styles.css` — brand tokens, layout, components
+- `index.html` — English landing page (EN, LTR)
+- `ar.html` — Arabic parallel page (AR, RTL)
+- `brand.html` — public brand styleguide (one-liner, pillars, rvnu circle,
+  color, type, downloads)
+- `styles.css` — brand tokens, layout, components, RTL overrides, brand-page
+  specimens
 - `script.js` — sticky-header scroll state, mobile nav, year stamp
 - `assets/` — logo SVGs (wordmark + submark + favicon)
 - `brand/fonts/` — self-hosted brand fonts (see `brand/fonts/README.md`)
-- Type: **Season Sans TRIAL** (sans) + **Cormorant SemiBoldItalic** (italic
-  accent) — self-hosted, with Inter / Georgia fallbacks.
+- `brand/` — drop the `rvnu-brand-guidelines.pdf` and `rvnu-brand-assets.zip`
+  here to activate the download links on `/brand`
+- Type: **Season Sans TRIAL** (Latin) + **Cormorant SemiBoldItalic** (italic
+  accent) + **Expo Arabic** (Arabic), all self-hosted with system fallbacks.
 
 ## Run locally
 
@@ -53,9 +59,11 @@ Static — drop the folder on any host:
 
 Typography:
 
-- `--font-sans`  → `Season Sans TRIAL` (Regular 400 · Medium 500 · SemiBold 600)
-- `--font-serif` → `Cormorant` SemiBoldItalic (italic only — used as the brand's
+- `--font-sans`   → `Season Sans TRIAL` (Regular 400 · Medium 500 · SemiBold 600)
+- `--font-serif`  → `Cormorant` SemiBoldItalic (italic only — used as the brand's
   signature accent on words like *Growth*, *Grow*, *Sales*, *expertise*)
+- `--font-arabic` → `Expo Arabic` (Light 300 · Medium 500) — applied on
+  `html[lang="ar"]` via a scoped override block near the bottom of `styles.css`
 
 Font files are self-hosted from `brand/fonts/`. If that folder is empty the
 site falls back to Inter / Georgia via the CSS stack. See
@@ -75,8 +83,33 @@ Hierarchy in use (matches the PDF/deck system):
 
 ## Editing copy
 
-All copy lives directly in `index.html`. Wrap any word in
-`<span class="serif-italic">…</span>` to apply the brand's italic-serif accent.
+Copy lives directly in `index.html` (English) and `ar.html` (Arabic). Wrap
+any word in `<span class="serif-italic">…</span>` to apply the brand's
+italic-serif accent — in Arabic this still renders as Expo Arabic, so the
+accent reads as a semantic pivot word rather than an italic swap.
+
+When editing, keep the never-say / always-say rules from `/brand`:
+
+- **Never say**: "marketing agency", "ads agency", "creative studio",
+  "marketing intelligence agency".
+- **Always say**: growth agency / وكالة نمو — a scientific system for
+  sustainable growth.
+
+## Bilingual model
+
+- `index.html` is English (LTR); `ar.html` is Arabic (RTL).
+- Language toggle (`ع` / `EN`) lives in each header; a full "العربية" /
+  "English" link is in the mobile nav.
+- Per brand policy the two are **parallel experiences**, not translations —
+  both must stay in sync when copy changes.
+
+## Brand styleguide
+
+`brand.html` is the public brand reference, with the one-liner, never-say /
+always-say block, three pillars, the rvnu circle (spend → activity →
+acquisition → purchase → spend), color palette, type specimens, department
+list, and download cards. Drop `rvnu-brand-guidelines.pdf` and
+`rvnu-brand-assets.zip` into `brand/` to activate the downloads.
 
 ## Swapping in the official logo
 
