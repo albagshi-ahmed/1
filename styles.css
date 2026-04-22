@@ -377,6 +377,13 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; letter-spacing: -0.015em; }
 .solutions { padding: clamp(64px, 9vw, 120px) 0; background: var(--paper); border-block: 1px solid var(--rule); }
 
 .section-head { max-width: 760px; margin-bottom: clamp(32px, 5vw, 56px); }
+.section-sub {
+  margin-top: 18px;
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  max-width: 620px;
+}
 
 .solutions-grid {
   display: grid;

@@ -1,9 +1,12 @@
 # rvnu. — website
 
-Single-page static landing site for **rvnu**, a B2B marketing intelligence agency
+Single-page static landing site for **rvnu**, a growth agency (وكالة نمو)
 based in Riyadh, Saudi Arabia. The name is short for *revenue*.
 
 > *Sustainable Growth.*
+
+rvnu is not a marketing agency — it's a scientific system that turns growth
+from lucky strikes into disciplined, compounding knowledge.
 
 ## Stack
 
