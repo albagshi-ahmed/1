@@ -41,6 +41,22 @@
   src: url('brand/fonts/Cormorant-SemiBoldItalic.ttf') format('truetype');
 }
 
+/* Arabic — Expo Arabic */
+@font-face {
+  font-family: 'Expo Arabic';
+  font-style: normal;
+  font-weight: 300 400;
+  font-display: swap;
+  src: url('brand/fonts/alfont_com_AlFont_com_ExpoArabic-Light-1.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Expo Arabic';
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url('brand/fonts/alfont_com_AlFont_com_ExpoArabic-Medium-1.ttf') format('truetype');
+}
+
 :root {
   /* Color tokens */
   --cream:    #F2F0E9;
@@ -59,6 +75,7 @@
   /* Type — rvnu brand stack (see @font-face above, brand/fonts/README.md) */
   --font-sans:  'Season Sans TRIAL', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --font-serif: 'Cormorant', 'Instrument Serif', 'Source Serif 4', Georgia, serif;
+  --font-arabic: 'Expo Arabic', 'Noto Sans Arabic', 'Segoe UI', 'Tahoma', sans-serif;
 
   /* Layout */
   --wrap-max: 1240px;
@@ -377,6 +394,13 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; letter-spacing: -0.015em; }
 .solutions { padding: clamp(64px, 9vw, 120px) 0; background: var(--paper); border-block: 1px solid var(--rule); }
 
 .section-head { max-width: 760px; margin-bottom: clamp(32px, 5vw, 56px); }
+.section-sub {
+  margin-top: 18px;
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  max-width: 620px;
+}
 
 .solutions-grid {
   display: grid;
@@ -581,4 +605,243 @@ button:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* =========================================================================
+   Language toggle (EN / AR)
+   ========================================================================= */
+
+.lang-toggle {
+  display: inline-flex; align-items: center;
+  padding: 8px 14px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  transition: color .15s var(--ease), background .15s var(--ease);
+}
+.lang-toggle:hover { color: var(--ink); background: var(--cream); }
+@media (max-width: 880px) {
+  .lang-toggle { display: none; }
+}
+
+/* =========================================================================
+   Arabic + RTL overrides
+   Active on <html lang="ar" dir="rtl">. Keep this block last so it wins
+   over the LTR defaults where needed.
+   ========================================================================= */
+
+html[lang="ar"] {
+  font-family: var(--font-arabic);
+}
+html[lang="ar"] body {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+}
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4 {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+  font-weight: 600;
+}
+/* The Cormorant italic accent is Latin-only. In Arabic contexts we don't
+   swap the font — we keep .serif-italic as the same Arabic face but let it
+   sit in-line visually as a regular word (no italic synthesis). */
+html[lang="ar"] .serif-italic {
+  font-family: var(--font-arabic);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/* RTL layout fixes */
+html[dir="rtl"] .btn-arrow { transform: scaleX(-1); }
+html[dir="rtl"] .btn:hover .btn-arrow { transform: scaleX(-1) translateX(2px); }
+html[dir="rtl"] .primary-nav a::after { transform-origin: right; }
+
+/* Hero tiles are absolutely positioned to the right in LTR; mirror for RTL. */
+html[dir="rtl"] .tile-a { right: auto; left: 6%;  transform: rotate(6deg);  }
+html[dir="rtl"] .tile-b { right: auto; left: 22%; transform: rotate(-4deg); }
+html[dir="rtl"] .tile-c { right: auto; left: 4%;  transform: rotate(3deg);  }
+html[dir="rtl"] .tile-d { right: auto; left: 28%; transform: rotate(-8deg); }
+
+/* Arabic tracking on eyebrows is weird — tone it down */
+html[lang="ar"] .eyebrow,
+html[lang="ar"] .footer-h,
+html[lang="ar"] .stat-label,
+html[lang="ar"] .card-tags {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* =========================================================================
+   Brand styleguide page (brand.html)
+   ========================================================================= */
+
+.brand-page { padding: clamp(48px, 6vw, 80px) 0 clamp(64px, 8vw, 120px); }
+.brand-page .section-head { margin-top: clamp(56px, 7vw, 96px); }
+.brand-page .section-head:first-of-type { margin-top: 0; }
+
+.brand-oneliner {
+  max-width: 820px;
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.35;
+  color: var(--ink);
+  margin-top: 20px;
+}
+
+.dir-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+.dir-card {
+  padding: 28px 26px;
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+.dir-card.never { background: color-mix(in srgb, var(--orange) 10%, var(--paper)); border-color: color-mix(in srgb, var(--orange) 40%, var(--rule)); }
+.dir-card.always { background: color-mix(in srgb, var(--green) 10%, var(--paper)); border-color: color-mix(in srgb, var(--green) 40%, var(--rule)); }
+.dir-card h3 { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 14px; }
+.dir-card ul { display: flex; flex-direction: column; gap: 8px; font-size: 17px; font-weight: 500; }
+@media (max-width: 720px) { .dir-grid { grid-template-columns: 1fr; } }
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+.pillar {
+  padding: 28px 24px;
+  background: var(--cream);
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
+}
+.pillar .pillar-num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1;
+  color: var(--orange);
+}
+.pillar h3 { font-size: 22px; font-weight: 500; margin-top: 10px; }
+.pillar p { color: var(--ink-soft); font-size: 15px; line-height: 1.55; margin-top: 10px; }
+@media (max-width: 900px) { .pillars-grid { grid-template-columns: 1fr; } }
+
+.circle-diagram {
+  margin-top: 24px;
+  padding: 40px 24px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
+  display: grid;
+  place-items: center;
+}
+.circle-diagram svg { width: 100%; max-width: 560px; height: auto; }
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+.swatch {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+.swatch-fill { aspect-ratio: 3 / 2; }
+.swatch-meta { padding: 14px 16px; background: var(--paper); }
+.swatch-name { font-size: 14px; font-weight: 600; }
+.swatch-hex { font-size: 12px; color: var(--muted); letter-spacing: 0.08em; margin-top: 2px; }
+.swatch-role { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+@media (max-width: 900px) { .swatch-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.type-specimen {
+  margin-top: 24px;
+  display: grid; gap: 28px;
+}
+.type-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 24px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.type-row:last-child { border-bottom: 0; }
+.type-meta { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); line-height: 1.6; }
+.type-sample.hero { font-size: clamp(44px, 6vw, 72px); line-height: 1; font-weight: 600; letter-spacing: -0.025em; }
+.type-sample.headline { font-size: clamp(28px, 3.6vw, 42px); line-height: 1.05; font-weight: 600; letter-spacing: -0.02em; }
+.type-sample.card { font-size: 22px; font-weight: 500; }
+.type-sample.label { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+.type-sample.body { font-size: 17px; line-height: 1.55; color: var(--ink-soft); }
+@media (max-width: 720px) {
+  .type-row { grid-template-columns: 1fr; gap: 8px; }
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+  margin-top: 24px;
+}
+.logo-card {
+  padding: 40px 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  display: grid; place-items: center;
+  min-height: 180px;
+}
+.logo-card.dark { background: var(--ink); color: var(--cream); }
+.logo-card svg { width: 100%; max-width: 320px; height: auto; }
+.logo-card.mark svg { max-width: 80px; }
+@media (max-width: 720px) { .logo-grid { grid-template-columns: 1fr; } }
+
+.downloads-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+.download-card {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 22px 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  transition: border-color .15s var(--ease), transform .15s var(--ease);
+}
+.download-card:hover { border-color: var(--ink); transform: translateY(-2px); }
+.download-card .dl-title { font-size: 16px; font-weight: 600; }
+.download-card .dl-meta { font-size: 12px; color: var(--muted); margin-top: 4px; letter-spacing: 0.06em; }
+.download-card .dl-arrow { width: 20px; height: 20px; flex: 0 0 auto; }
+@media (max-width: 720px) { .downloads-grid { grid-template-columns: 1fr; } }
+
+.departments-list {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 24px;
+}
+.departments-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex; justify-content: space-between; gap: 12px;
+  font-size: 15px;
+}
+.departments-list .dept-name { font-weight: 500; }
+.departments-list .dept-role { color: var(--muted); font-size: 13px; text-align: right; max-width: 60%; }
+@media (max-width: 720px) {
+  .departments-list { grid-template-columns: 1fr; }
+  .departments-list .dept-role { text-align: left; max-width: 100%; }
 }

@@ -18,13 +18,17 @@ them by these exact names — no other wiring is required.
 |-----------------------------------|--------|-----------------------------------------|
 | `Cormorant-SemiBoldItalic.ttf`    | 600 italic | Brand accent words only (_Growth_, _Grow_, _Sales_, _expertise_, _moved_, …) |
 
+## Arabic — Expo Arabic
+
+Wired up and applied automatically on `html[lang="ar"]` (see `ar.html`).
+
+| File                                                   | Weight range | Use                     |
+|--------------------------------------------------------|--------------|-------------------------|
+| `alfont_com_AlFont_com_ExpoArabic-Light-1.ttf`         | 300–400      | Arabic body, chrome     |
+| `alfont_com_AlFont_com_ExpoArabic-Medium-1.ttf`        | 500–600      | Arabic headlines, labels |
+
 ## Bundled but not wired up
 
-These are staged here for future use (e.g. Arabic localization, or if we ever
-swap the Latin face). They are NOT referenced from CSS.
-
-- `alfont_com_AlFont_com_ExpoArabic-Light-1.ttf`   — Arabic, light
-- `alfont_com_AlFont_com_ExpoArabic-Medium-1.ttf`  — Arabic, medium
 - `InstrumentSans-VariableFont_wdthwght-BF645daa0fb3ead.ttf` — previous Season
   Sans surrogate; kept as a backup
 
