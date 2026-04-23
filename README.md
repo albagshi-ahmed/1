@@ -20,9 +20,11 @@ Pure static — no build step.
   specimens
 - `script.js` — sticky-header scroll state, mobile nav, year stamp
 - `assets/` — logo SVGs (wordmark + submark + favicon)
-- `brand/fonts/` — self-hosted brand fonts (see `brand/fonts/README.md`)
-- `brand/` — drop the `rvnu-brand-guidelines.pdf` and `rvnu-brand-assets.zip`
-  here to activate the download links on `/brand`
+- `brand/` — official brand assets:
+  - `rvnu-visual-identity-2026.pdf` — 53-page visual identity guide (from the brand designer)
+  - `social/` — 11 social media template layouts (JPG)
+  - `reports/` — 5 report template layouts (JPG)
+  - `fonts/` — self-hosted brand fonts (see `brand/fonts/README.md`)
 - Type: **Season Sans TRIAL** (Latin) + **Cormorant SemiBoldItalic** (italic
   accent) + **Expo Arabic** (Arabic), all self-hosted with system fallbacks.
 

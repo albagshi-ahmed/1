@@ -58,19 +58,23 @@
 }
 
 :root {
-  /* Color tokens */
-  --cream:    #F2F0E9;
+  /* Color tokens — eyedropped from the official rvnu visual identity PDF.
+     Names match the brand sheet (Carrara White, Black, Intense/Fiery Coral,
+     Quill Gray, Shiny Yellow, Navy, Lavender, Blue). */
+  --cream:    #F3F4EF;  /* Carrara White — primary background */
   --paper:    #FFFFFF;
-  --ink:      #0A0A0A;
+  --ink:      #000000;  /* Black — primary text / wordmark */
   --ink-soft: #2A2A2A;
   --muted:    #6B6B66;
-  --rule:     #E2DFD4;
+  --rule:     #E2E1DB;  /* derived from Carrara White */
 
-  --orange:   #F26B2A;
-  --navy:     #1F2D70;
-  --yellow:   #ECEB1F;
-  --lavender: #BCAEE6;
-  --green:    #5BBF74;
+  --orange:   #EB6530;  /* Intense / Fiery Coral — primary accent */
+  --navy:     #263D89;  /* Navy — secondary */
+  --yellow:   #F7F260;  /* Shiny Yellow — secondary */
+  --lavender: #BBAEDC;  /* Lavender — additional */
+  --blue:     #3554FC;  /* Blue — additional */
+  --gray:     #D6D5D0;  /* Quill Gray — neutral support */
+  --green:    #5BBF74;  /* not in brand; retained only for status pill fallback */
 
   /* Type — rvnu brand stack (see @font-face above, brand/fonts/README.md) */
   --font-sans:  'Season Sans TRIAL', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;

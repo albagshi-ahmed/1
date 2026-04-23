@@ -16,6 +16,6 @@
 /index.html      /                301
 /brand.html      /brand           301
 
-# Brand kit downloads — re-expose as cleaner paths once the files land in /brand/
-/brand/guidelines.pdf      /brand/rvnu-brand-guidelines.pdf      200
-/brand/assets.zip          /brand/rvnu-brand-assets.zip          200
+# Brand kit downloads — short aliases for the long canonical filenames
+/brand/guidelines.pdf      /brand/rvnu-visual-identity-2026.pdf  200
+/brand/identity.pdf        /brand/rvnu-visual-identity-2026.pdf  200
