@@ -1,0 +1,21 @@
+# rvnu — Netlify routing
+# Clean URLs that hide the .html extension and surface the bilingual + brand
+# pages at the paths people will actually type / share.
+
+# Bilingual entry points
+/en              /index.html      200
+/ar              /ar.html         200
+
+# Brand styleguide (so we can share /brand instead of /brand.html)
+/brand           /brand.html      200
+
+# Tolerate trailing-slash and .html-suffix variants
+/en/             /index.html      200
+/ar/             /ar.html         200
+/brand/          /brand.html      200
+/index.html      /                301
+/brand.html      /brand           301
+
+# Brand kit downloads — re-expose as cleaner paths once the files land in /brand/
+/brand/guidelines.pdf      /brand/rvnu-brand-guidelines.pdf      200
+/brand/assets.zip          /brand/rvnu-brand-assets.zip          200
