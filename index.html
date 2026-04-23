@@ -15,6 +15,14 @@
   <link rel="preload" as="font" type="font/ttf" href="brand/fonts/SeasonSans-TRIAL-Regular.ttf" crossorigin />
   <link rel="preload" as="font" type="font/ttf" href="brand/fonts/SeasonSans-TRIAL-SemiBold.ttf" crossorigin />
   <link rel="preload" as="font" type="font/ttf" href="brand/fonts/Cormorant-SemiBoldItalic.ttf" crossorigin />
+
+  <!-- Temporary web-font fallbacks. Used only while the self-hosted Season Sans
+       and Cormorant TTFs in brand/fonts/ are missing. When the TTFs land the
+       self-hosted faces win because they're listed first in --font-sans / --font-serif. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -96,22 +104,6 @@
             </svg>
           </a>
           <a class="btn btn-ghost" href="#solutions">View solutions</a>
-        </div>
-
-        <!-- Decorative pixel-icon tiles, mirroring the brand's visual language -->
-        <div class="hero-tiles" aria-hidden="true">
-          <div class="tile tile-orange tile-a">
-            <svg viewBox="0 0 16 16"><path d="M2 13l3-3 3 2 5-6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 4h4v4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-          </div>
-          <div class="tile tile-lavender tile-b">
-            <svg viewBox="0 0 16 16"><path d="M3 10l5-5 5 5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
-          </div>
-          <div class="tile tile-yellow tile-c">
-            <svg viewBox="0 0 16 16"><path d="M9 3l4 4-4 4M7 13l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-          </div>
-          <div class="tile tile-navy tile-d">
-            <span class="tile-stat">4×</span>
-          </div>
         </div>
       </div>
     </section>
