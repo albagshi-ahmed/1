@@ -1,0 +1,15 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Hourly refresh of the Google channel only.
+[functions."refresh-google"]
+  schedule = "@hourly"
+
+# Serve /tameed-live.json from the Netlify Blobs "tameed" store via serve-google.
+# serve-google self-seeds from SEED_URL on first call, so this is safe to keep on.
+[[redirects]]
+  from = "/tameed-live.json"
+  to = "/.netlify/functions/serve-google"
+  status = 200
+  force = true
