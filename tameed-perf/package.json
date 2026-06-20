@@ -1,0 +1,10 @@
+{
+  "name": "tameed-perf",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Netlify functions that refresh the Google channel of the Tameed paid-media dashboard from Supermetrics.",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
