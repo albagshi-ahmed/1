@@ -19,7 +19,7 @@ export default async () => {
   const data = await res.json();
   const channelCount = data?.channels ? Object.keys(data.channels).length : 0;
 
-  const store = getStore("tameed");
+  const store = getStore({ name: "tameed", consistency: "strong" });
   await store.setJSON(BLOB_KEY, data);
 
   return new Response(`seeded ${channelCount} channels`, { status: 200 });

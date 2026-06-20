@@ -80,7 +80,7 @@ export default async () => {
 
   // Update ONLY channels.Google in the existing JSON; leave everything else
   // (start, days, fx, the other 5 channels) untouched.
-  const store = getStore("tameed");
+  const store = getStore({ name: "tameed", consistency: "strong" });
   const existing = await store.get(BLOB_KEY, { type: "json" });
   if (!existing || !existing.channels) {
     return new Response(
