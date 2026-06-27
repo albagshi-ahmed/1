@@ -1,22 +1,18 @@
 # rvnu — Netlify routing
-# Clean URLs that hide the .html extension and surface the bilingual + brand
-# pages at the paths people will actually type / share.
+# The site root ("/") serves the temporary holding page (index.html).
+# The previous homepage has been removed; /en now points at the holding page.
 
-# The site root ("/") now serves the temporary holding page (index.html).
-# The full bilingual site is preserved and still reachable at /en, /ar, /brand.
-
-# Bilingual entry points (full site lives at home.html now that "/" is the holding page)
-/en              /home.html       200
+# Bilingual entry points
+/en              /                200
 /ar              /ar.html         200
 
 # Brand styleguide (so we can share /brand instead of /brand.html)
 /brand           /brand.html      200
 
 # Tolerate trailing-slash and .html-suffix variants
-/en/             /home.html       200
+/en/             /                200
 /ar/             /ar.html         200
 /brand/          /brand.html      200
-/home.html       /en              301
 /brand.html      /brand           301
 
 # Brand kit downloads — short aliases for the long canonical filenames
