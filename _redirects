@@ -2,6 +2,11 @@
 # The site root ("/") serves the temporary holding page (index.html).
 # The previous homepage has been removed; /en now points at the holding page.
 
+# Old homepage is retired — force /home.html to the holding page even if a
+# stale file lingers in the deploy ("!" shadows any matching static file).
+/home.html       /                301!
+/home            /                301!
+
 # Bilingual entry points
 /en              /                200
 /ar              /ar.html         200
